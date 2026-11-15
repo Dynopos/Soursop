@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /terima-kasih.html
 
 # Perayap enjin AI dibenarkan (GEO)
 User-agent: GPTBot

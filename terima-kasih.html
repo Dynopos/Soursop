@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terima Kasih | MFS Soursop Plus</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.png" type="image/png">
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 0%,#1d5a33,#062012 70%);color:#f3f8f3;font:400 16px/1.6 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-align:center}
+  main{max-width:560px}
+  img{width:140px;height:auto}
+  h1{font:600 36px/1.15 Georgia,serif;margin:16px 0 10px;color:#f4dc9f}
+  p{color:#cfdcd1;margin:0 0 14px}
+  ol{text-align:left;color:#cfdcd1;margin:0 auto 22px;padding-left:22px;max-width:440px}
+  li{margin-bottom:6px}
+  a.btn{display:inline-block;margin:4px;padding:14px 22px;border-radius:12px;font-weight:800;text-decoration:none}
+  .wa{background:linear-gradient(135deg,#25d366,#128c4a);color:#fff}
+  .l{border:1px solid rgba(212,173,95,.45);color:#f4dc9f}
+  small{display:block;margin-top:18px;color:#8fa394;font-size:12.5px}
+</style>
+</head>
+<body>
+  <main>
+    <img src="assets/img/logo-320.webp" width="320" height="293" alt="MFS Soursop Plus">
+    <h1>Terima kasih!</h1>
+    <p>Jika bayaran anda berjaya, resit akan dihantar oleh CHIP ke emel anda.</p>
+    <ol>
+      <li>Tekan butang di bawah untuk WhatsApp kami.</li>
+      <li>Hantar <strong>nama</strong>, <strong>alamat penghantaran</strong> dan tangkapan skrin resit.</li>
+      <li>Kami akan sahkan dan pos Soursop Plus anda (pos percuma).</li>
+    </ol>
+    <a class="btn wa" id="wa" href="https://wa.me/60147315822">WhatsApp — Saya Dah Bayar</a>
+    <a class="btn l" href="./">Kembali ke Laman Utama</a>
+    <small>Bayaran tidak berjaya? Cuba semula dari laman utama atau WhatsApp kami di 014-731 5822.</small>
+  </main>
+<script>
+  // Mesej WhatsApp siap diisi; tambah ID pembelian CHIP jika ada dalam URL
+  (function () {
+    var q = new URLSearchParams(location.search), ref = q.get('reference') || q.get('id') || q.get('purchase_id') || '';
+    var msg = 'Salam, saya dah bayar online Soursop Plus melalui CHIP.' + (ref ? ' Rujukan: ' + ref + '.' : '') + ' Nama & alamat penghantaran saya: ';
+    document.getElementById('wa').href = 'https://wa.me/60147315822?text=' + encodeURIComponent(msg);
+  })();
+</script>
+</body>
+</html>

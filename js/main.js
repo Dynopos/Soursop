@@ -2,6 +2,14 @@
    Tetapkan pautan WhatsApp di bawah; semua elemen [data-wa] akan menggunakannya. */
 const BOOKING_URL = 'https://wa.me/60147315822';
 const DEFAULT_MSG = 'Salam, saya berminat dengan MFS Soursop Plus. (dari soursop.my)';
+/* Pautan bayaran CHIP (Payment Link dari portal.chip-in.asia → Links).
+   Tampal URL link bagi setiap set. Jika kosong, butang "Bayar Online" disembunyikan
+   dan pelanggan order melalui WhatsApp seperti biasa. */
+const PAY_LINKS = {
+  'set-1': '',   // Set Awal — 1 botol RM220
+  'set-2': '',   // Set Separa Lengkap — 2 botol RM400
+  'set-3': '',   // Set Lengkap — 3 botol RM500
+};
 const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT_MSG);
 
 (() => {
@@ -13,6 +21,12 @@ const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT
 
   /* ---------- Semua butang tempahan → satu pautan WhatsApp ---------- */
   $$('[data-wa]').forEach(a => { a.href = waLink(a.dataset.msg); a.target = '_blank'; a.rel = 'noopener'; });
+
+  /* ---------- Bayar online (CHIP Payment Link) ---------- */
+  const okLink = u => /^https:\/\/[^\s]+$/.test(u || '');
+  let anyPay = false;
+  $$('[data-pay]').forEach(a => { const u = PAY_LINKS[a.dataset.pay]; if (okLink(u)) { a.href = u; a.hidden = false; anyPay = true; } });
+  $$('[data-pay-note]').forEach(n => { n.hidden = !anyPay; });
 
   /* ---------- Marquee: gandakan item untuk gelungan lancar (animasi translateX(-50%)) ---------- */
   const mq = $('#marquee');
@@ -109,6 +123,7 @@ const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT
     if (!mList.length) mList = [$('.pkg__media img', card)?.getAttribute('src')].filter(Boolean);
     $('#mThumbs').innerHTML = mList.map((n, k) => `<button type="button" aria-label="Gambar ${k + 1}"><img src="${small(n)}" alt="" loading="lazy"></button>`).join('');
     $$('#mThumbs button').forEach((t, k) => t.addEventListener('click', () => showM(k)));
+    const pu = PAY_LINKS[card.dataset.id]; $('#mPay').hidden = !okLink(pu); if (okLink(pu)) $('#mPay').href = pu;
     mPoster = card.dataset.poster || '';
     $('#mPoster').hidden = !mPoster;
     $('#mWa').setAttribute('aria-label', 'Order Now — ' + mName);

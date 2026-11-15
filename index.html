@@ -34,7 +34,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="preload" as="image" href="assets/img/hero-960.webp" imagesrcset="assets/img/hero-480.webp 480w, assets/img/hero-960.webp 768w" imagesizes="(min-width: 1024px) 60vw, 100vw">
-<link rel="stylesheet" href="css/style.css?v=20261115-2">
+<link rel="stylesheet" href="css/style.css?v=20261115-3">
 
 <script type="application/ld+json">
 {
@@ -490,6 +490,7 @@
             <button class="btn btn--line" type="button" data-open="set-3">Lihat Gambar</button>
             <a class="btn btn--gold" href="https://wa.me/60147315822" target="_blank" rel="noopener" data-wa="set-3" data-msg="Salam, saya nak order Soursop Plus SET LENGKAP 3 botol (RM500). (dari soursop.my)" aria-label="Order Now — Set Lengkap 3 botol">ORDER NOW</a>
           </div>
+          <a class="pkg__pay" href="#" data-pay="set-3" target="_blank" rel="noopener" hidden aria-label="Bayar online — Set Lengkap 3 botol (RM500)"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Bayar Online (FPX / Kad) melalui CHIP</a>
         </div>
       </div>
     </article>
@@ -514,6 +515,7 @@
             <button class="btn btn--line" type="button" data-open="set-2">Lihat Gambar</button>
             <a class="btn btn--gold" href="https://wa.me/60147315822" target="_blank" rel="noopener" data-wa="set-2" data-msg="Salam, saya nak order Soursop Plus SET SEPARA LENGKAP 2 botol (RM400). (dari soursop.my)" aria-label="Order Now — Set Separa Lengkap 2 botol">ORDER NOW</a>
           </div>
+          <a class="pkg__pay" href="#" data-pay="set-2" target="_blank" rel="noopener" hidden aria-label="Bayar online — Set Separa Lengkap 2 botol (RM400)"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Bayar Online (FPX / Kad) melalui CHIP</a>
         </div>
       </div>
     </article>
@@ -539,10 +541,12 @@
             <button class="btn btn--line" type="button" data-open="set-1">Lihat Gambar</button>
             <a class="btn btn--gold" href="https://wa.me/60147315822" target="_blank" rel="noopener" data-wa="set-1" data-msg="Salam, saya nak order Soursop Plus SET AWAL 1 botol (RM220). (dari soursop.my)" aria-label="Order Now — Set Awal 1 botol">ORDER NOW</a>
           </div>
+          <a class="pkg__pay" href="#" data-pay="set-1" target="_blank" rel="noopener" hidden aria-label="Bayar online — Set Awal 1 botol (RM220)"><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Bayar Online (FPX / Kad) melalui CHIP</a>
         </div>
       </div>
     </article>
   </div>
+  <p class="note pay-note" data-pay-note hidden><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Bayaran online diproses dengan selamat oleh <strong>CHIP</strong> (gerbang pembayaran Malaysia). Selepas bayar, anda akan dibawa ke halaman pengesahan — kemudian WhatsApp kami untuk sahkan alamat penghantaran.</p>
   <p class="note">* Harga berdasarkan poster harga promosi rasmi. Sila sahkan harga semasa &amp; stok melalui WhatsApp.</p>
 </section>
 
@@ -553,7 +557,7 @@
     <ol class="steps__list">
       <li><b>01</b><div><strong>Pilih set</strong><span>1, 2 atau 3 botol — ikut keperluan anda.</span></div></li>
       <li><b>02</b><div><strong>Tekan Order Now</strong><span>Terus ke WhatsApp 014-731 5822.</span></div></li>
-      <li><b>03</b><div><strong>Bayar &amp; terima</strong><span>Maklumat bayaran diberi di WhatsApp — pos percuma ke rumah.</span></div></li>
+      <li><b>03</b><div><strong>Bayar &amp; terima</strong><span>Bayar online (FPX / kad) atau ikut maklumat di WhatsApp — pos percuma ke rumah.</span></div></li>
     </ol>
     <a class="btn btn--gold btn--lg" href="https://wa.me/60147315822" target="_blank" rel="noopener" data-wa="steps"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp Sekarang</a>
   </div>
@@ -768,6 +772,7 @@
       <strong class="modal__lbl">Maklumat Set</strong><ul class="fac" id="mFac"></ul>
       <div class="modal__btns">
         <a class="btn btn--gold btn--lg" id="mWa" href="https://wa.me/60147315822" target="_blank" rel="noopener">ORDER NOW ↗</a>
+        <a class="btn btn--ghost" id="mPay" href="#" target="_blank" rel="noopener" hidden><svg class="ico" aria-hidden="true"><use href="#i-lock"/></svg> Bayar Online</a>
         <button class="btn btn--line" type="button" id="mPoster" hidden>Lihat Poster Harga</button>
       </div>
     </div>
@@ -789,11 +794,12 @@
   <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.2 8 9 4.6-.8 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-brief" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M3 7h18v13H3zM8 7V4h8v3M3 12h18"/></symbol>
   <symbol id="i-lab" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" d="M9 3h6M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3M7 15h10"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M6 10h12v11H6zM8.5 10V7a3.5 3.5 0 0 1 7 0v3"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M2 6h12v10H2zM14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
   <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.1 1.7 3.6 3.9 3.9v3.2a7.4 7.4 0 0 1-3.9-1.2v6.2A6 6 0 1 1 10.6 9v3.3a2.8 2.8 0 1 0 2.8 2.8V3h3.2Z"/></symbol>
   <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.4 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4ZM9.3 13.4l8.6-5.4c.4-.3.8-.1.5.2l-7.1 6.4-.3 3.3-1.7-4.5Z"/></symbol>
 </svg>
 
-<script src="js/main.js?v=20261115-2" defer></script>
+<script src="js/main.js?v=20261115-3" defer></script>
 </body>
 </html>

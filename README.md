@@ -34,7 +34,16 @@ robots.txt sitemap.xml llms.txt site.webmanifest 404.html netlify.toml
   soalan lazim harga, kemudian `llms.txt` dan blok JSON-LD (`"price"`).
 - **Gambar**: letak fail WebP baharu dalam `assets/img/` dengan nama sama (atau tukar `src` dalam `index.html`).
 - **Video**: ganti fail dalam `assets/video/` (MP4 H.264 + gambar `.webp` poster).
-- Selepas menukar CSS/JS, naikkan versi `?v=20261115-2` dalam `index.html` supaya telefon pelawat muat fail baharu.
+- Selepas menukar CSS/JS, naikkan versi `?v=20261115-3` dalam `index.html` supaya telefon pelawat muat fail baharu.
+
+## Bayar online — CHIP Payment Link (tanpa pelayan)
+Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *hanya selepas* link diisi.
+1. Log masuk https://portal.chip-in.asia → **Links → Add Payment Link**. Cipta 3 link berharga tetap:
+   Set Awal RM220, Set Separa Lengkap RM400, Set Lengkap RM500.
+   Aktifkan medan nama, telefon dan **alamat penghantaran** jika ada pilihan itu.
+2. Tetapkan halaman selepas berjaya bayar (success redirect) ke `https://soursop.my/terima-kasih.html`.
+3. Tampal URL setiap link dalam `js/main.js` → `PAY_LINKS` (`set-1`, `set-2`, `set-3`), kemudian naikkan `?v=` dalam `index.html`.
+4. Semak bayaran di dashboard CHIP (bukan berdasarkan halaman terima kasih — pelanggan boleh buka halaman itu tanpa bayar).
 
 ## Deploy
 **Netlify (disyorkan)**: Add new site → Import from Git → pilih repo ini, *publish directory* `.` (tiada build).
