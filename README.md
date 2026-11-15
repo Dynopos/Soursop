@@ -34,7 +34,7 @@ robots.txt sitemap.xml llms.txt site.webmanifest 404.html netlify.toml
   soalan lazim harga, kemudian `llms.txt` dan blok JSON-LD (`"price"`).
 - **Gambar**: letak fail WebP baharu dalam `assets/img/` dengan nama sama (atau tukar `src` dalam `index.html`).
 - **Video**: ganti fail dalam `assets/video/` (MP4 H.264 + gambar `.webp` poster).
-- Selepas menukar CSS/JS, naikkan versi `?v=20261115-3` dalam `index.html` supaya telefon pelawat muat fail baharu.
+- Selepas menukar CSS/JS, naikkan versi `?v=20261115-6` dalam `index.html` supaya telefon pelawat muat fail baharu.
 
 ## Bayar online — CHIP Payment Link (tanpa pelayan)
 Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *hanya selepas* link diisi.
@@ -43,14 +43,16 @@ Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *h
    Aktifkan medan nama, telefon dan **alamat penghantaran** jika ada pilihan itu.
 2. Tetapkan halaman selepas berjaya bayar (success redirect) ke `https://soursop.my/terima-kasih.html`.
 3. Tampal URL setiap link dalam `js/main.js` → `PAY_LINKS` (`set-1`, `set-2`, `set-3`), kemudian naikkan `?v=` dalam `index.html`.
+   Link semasa: set-1 RM220 `…/nlWuNBUfcmijYh3qRR`, set-2 RM400 `…/HAzopQU1bSQgeH2QMj`, set-3 RM500 `…/6YyWXrbTq40Jqm59Vg`.
 4. Semak bayaran di dashboard CHIP (bukan berdasarkan halaman terima kasih — pelanggan boleh buka halaman itu tanpa bayar).
 
 ## Deploy
-**Netlify (disyorkan)**: Add new site → Import from Git → pilih repo ini, *publish directory* `.` (tiada build).
+**GitHub Pages (digunakan sekarang — fail `CNAME` = soursop.my)**: Settings → Pages → Deploy from a branch → `/ (root)`.
+DNS: rekod A `@` → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153; CNAME `www` → `dynopos.github.io`.
+
+**Netlify (alternatif)**: Add new site → Import from Git → pilih repo ini, *publish directory* `.` (tiada build).
 Domain: Domain management → Add domain `soursop.my` (+ `www`). DNS di pendaftar domain:
 `A @ → 75.2.60.5` dan `CNAME www → <nama-projek>.netlify.app`. HTTPS automatik.
-
-**GitHub Pages**: Settings → Pages → Deploy from a branch → `/ (root)`; tambah domain `soursop.my` di situ.
 
 Selepas terbit: daftar di Google Search Console + hantar `sitemap.xml`, Bing Webmaster Tools, dan letak
 pautan soursop.my di TikTok, Telegram dan Google Business Profile.
