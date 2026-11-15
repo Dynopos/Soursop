@@ -197,8 +197,8 @@ const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT
       if (e.key === ' ' || e.key === 'Enter') { play.click(); e.preventDefault(); }
       sync();
     });
-    audio.addEventListener('play', () => vid && !vid.paused && vid.pause());
-    vid && vid.addEventListener('play', () => !audio.paused && audio.pause());
+    audio.addEventListener('play', () => vids.forEach(v => { if (!v.paused) v.pause(); }));
+    vids.forEach(v => v.addEventListener('play', () => { if (!audio.paused) audio.pause(); }));
 
     /* Auto-main: pelayar menyekat bunyi sebelum interaksi. Cuba terus; jika disekat, main pada
        sentuhan/klik/kekunci PERTAMA di mana-mana (bukan skrol). Sekali sahaja; jeda pelawat dihormati. */

@@ -33,8 +33,9 @@ robots.txt sitemap.xml llms.txt site.webmanifest 404.html netlify.toml
 - **Harga**: dalam `index.html` cari `RM</small><strong>` (3 kad), mesej `data-msg`, bahagian *Fakta ringkas*,
   soalan lazim harga, kemudian `llms.txt` dan blok JSON-LD (`"price"`).
 - **Gambar**: letak fail WebP baharu dalam `assets/img/` dengan nama sama (atau tukar `src` dalam `index.html`).
+- **Voice note**: ganti `assets/audio/voice-note.ogg` dan `voice-note.m4a` (untuk iPhone), kemudian kemas kini `data-duration` (saat) pada `<audio id="vnAudio">` dalam `index.html`.
 - **Video**: ganti fail dalam `assets/video/` (MP4 H.264 + gambar `.webp` poster).
-- Selepas menukar CSS/JS, naikkan versi `?v=20261115-6` dalam `index.html` supaya telefon pelawat muat fail baharu.
+- Selepas menukar CSS/JS, naikkan versi `?v=20261115-7` dalam `index.html` supaya telefon pelawat muat fail baharu.
 
 ## Bayar online — CHIP Payment Link (tanpa pelayan)
 Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *hanya selepas* link diisi.
