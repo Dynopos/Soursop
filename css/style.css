@@ -637,3 +637,12 @@ body.lock{overflow:hidden}
 .facc--img figcaption{background:linear-gradient(0deg,rgba(3,20,10,.98) 55%,rgba(3,20,10,.85) 80%,rgba(3,20,10,0));padding-top:34px}
 .facc--img figcaption .eyebrow{color:var(--gold-hi)}
 .gallery button::after{background:linear-gradient(0deg,rgba(3,20,10,.95),transparent)}
+
+/* Gambar pengguna di hero: jangan potong kepala */
+.tile--photo img{object-position:center top}
+@media (max-width:699px){
+  .tile--photo{min-height:0;aspect-ratio:4/3}
+}
+@media (min-width:700px) and (max-width:1023px){
+  .tile--photo{min-height:340px}
+}
