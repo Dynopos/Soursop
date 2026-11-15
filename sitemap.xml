@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://soursop.my/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://soursop.my/assets/img/produk-kkm-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://soursop.my/assets/img/produk-meja-800.webp</image:loc></image:image>
+    <image:image><image:loc>https://soursop.my/assets/img/logo-640.webp</image:loc></image:image>
+    <image:image><image:loc>https://soursop.my/assets/img/poster-harga-1200.webp</image:loc></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://soursop.my/assets/video/testimoni-indah.webp</video:thumbnail_loc>
+      <video:title>Temubual Kak Indah — pengguna MFS Soursop Plus</video:title>
+      <video:description>Video perkongsian pengalaman pengguna MFS Soursop Plus.</video:description>
+      <video:content_loc>https://soursop.my/assets/video/testimoni-indah.mp4</video:content_loc>
+      <video:duration>111</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://soursop.my/assets/video/testimoni-liza.webp</video:thumbnail_loc>
+      <video:title>Perkongsian Kak Liza — pengguna MFS Soursop Plus</video:title>
+      <video:description>Video perkongsian pengalaman pengguna MFS Soursop Plus.</video:description>
+      <video:content_loc>https://soursop.my/assets/video/testimoni-liza.mp4</video:content_loc>
+      <video:duration>150</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://soursop.my/assets/video/testimoni-abang-mi.webp</video:thumbnail_loc>
+      <video:title>Perkongsian Abang Mi — pengguna MFS Soursop Plus</video:title>
+      <video:description>Video perkongsian pengalaman pengguna MFS Soursop Plus.</video:description>
+      <video:content_loc>https://soursop.my/assets/video/testimoni-abang-mi.mp4</video:content_loc>
+      <video:duration>134</video:duration>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://soursop.my/assets/video/testimoni-pengguna.webp</video:thumbnail_loc>
+      <video:title>Temubual pengguna MFS Soursop Plus</video:title>
+      <video:description>Video perkongsian pengalaman pengguna MFS Soursop Plus.</video:description>
+      <video:content_loc>https://soursop.my/assets/video/testimoni-pengguna.mp4</video:content_loc>
+      <video:duration>98</video:duration>
+    </video:video>
+  </url>
+</urlset>
