@@ -646,3 +646,17 @@ body.lock{overflow:hidden}
 @media (min-width:700px) and (max-width:1023px){
   .tile--photo{min-height:340px}
 }
+
+/* CHIP sebagai pilihan utama, WhatsApp pilihan terakhir */
+.pkg__btns{grid-template-columns:1.4fr 1fr}
+.pkg__buy .ico{width:15px;height:15px}
+.pkg__wa{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin-top:2px;padding:4px;font-size:12.5px;font-weight:700;color:var(--silver);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(207,220,209,.35)}
+.pkg__wa:hover{color:#25d366;text-decoration-color:#25d366}
+.pkg__wa .ico{width:15px;height:15px;color:#25d366}
+.pkg__wa[hidden]{display:none!important}
+.cta__btns{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.cta .cta__btns .btn{align-self:auto}
+.tile--photo img{object-position:center 58%}
+@media (max-width:699px){.tile--photo{aspect-ratio:1/1}}
+
+.tile--photo img{object-position:right 42%}

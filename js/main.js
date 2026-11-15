@@ -25,7 +25,11 @@ const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT
   /* ---------- Bayar online (CHIP Payment Link) ---------- */
   const okLink = u => /^https:\/\/[^\s]+$/.test(u || '');
   let anyPay = false;
-  $$('[data-pay]').forEach(a => { const u = PAY_LINKS[a.dataset.pay]; if (okLink(u)) { a.href = u; a.hidden = false; anyPay = true; } });
+  $$('[data-pay]').forEach(a => {
+    const u = PAY_LINKS[a.dataset.pay];
+    if (okLink(u)) { a.href = u; anyPay = true; }
+    else { a.href = waLink(a.dataset.msg); const t = a.querySelector('span'); if (t) t.textContent = 'ORDER WHATSAPP'; const w = a.closest('.pkg')?.querySelector('.pkg__wa'); if (w) w.hidden = true; }
+  });
   $$('[data-pay-note]').forEach(n => { n.hidden = !anyPay; });
 
   /* ---------- Marquee: gandakan item untuk gelungan lancar (animasi translateX(-50%)) ---------- */
@@ -124,10 +128,11 @@ const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT
     $('#mThumbs').innerHTML = mList.map((n, k) => `<button type="button" aria-label="Gambar ${k + 1}"><img src="${small(n)}" alt="" loading="lazy"></button>`).join('');
     $$('#mThumbs button').forEach((t, k) => t.addEventListener('click', () => showM(k)));
     const pu = PAY_LINKS[card.dataset.id]; $('#mPay').hidden = !okLink(pu); if (okLink(pu)) $('#mPay').href = pu;
+    $('#mPay').setAttribute('aria-label', 'Beli sekarang — ' + mName);
     mPoster = card.dataset.poster || '';
     $('#mPoster').hidden = !mPoster;
-    $('#mWa').setAttribute('aria-label', 'Order Now — ' + mName);
-    $('#mWa').href = $('[data-wa][data-msg]', card)?.href || waLink();
+    $('#mWa').setAttribute('aria-label', 'Order melalui WhatsApp — ' + mName);
+    $('#mWa').href = waLink($('.pkg__wa', card)?.dataset.msg);
     showM(0); openLayer(modal);
   };
   $$('[data-open]').forEach(b => b.addEventListener('click', () => openCard(b.closest('.pkg'))));
