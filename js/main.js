@@ -6,9 +6,9 @@ const DEFAULT_MSG = 'Salam, saya berminat dengan MFS Soursop Plus. (dari soursop
    Tampal URL link bagi setiap set. Jika kosong, butang "Bayar Online" disembunyikan
    dan pelanggan order melalui WhatsApp seperti biasa. */
 const PAY_LINKS = {
-  'set-1': 'https://pay.chip-in.asia/nlWuNBUfcmijYh3qRR',   // Set Awal — 1 botol RM220
-  'set-2': 'https://pay.chip-in.asia/HAzopQU1bSQgeH2QMj',   // Set Separa Lengkap — 2 botol RM400
-  'set-3': 'https://pay.chip-in.asia/6YyWXrbTq40Jqm59Vg',   // Set Lengkap — 3 botol RM500
+  'set-1': 'https://pay.chip-in.asia/DXNaIr3VQzcv9r0LHL',   // Set Awal — 1 botol RM220
+  'set-2': '',   // Set Separa Lengkap — 2 botol RM400
+  'set-3': '',   // Set Lengkap — 3 botol RM500
 };
 const waLink = msg => BOOKING_URL + '?text=' + encodeURIComponent(msg || DEFAULT_MSG);
 
