@@ -35,7 +35,7 @@ robots.txt sitemap.xml llms.txt site.webmanifest 404.html netlify.toml
 - **Gambar**: letak fail WebP baharu dalam `assets/img/` dengan nama sama (atau tukar `src` dalam `index.html`).
 - **Voice note**: ganti `assets/audio/voice-note.ogg` dan `voice-note.m4a` (untuk iPhone), kemudian kemas kini `data-duration` (saat) pada `<audio id="vnAudio">` dalam `index.html`.
 - **Video**: ganti fail dalam `assets/video/` (MP4 H.264 + gambar `.webp` poster).
-- Selepas menukar CSS/JS, naikkan versi `?v=20261122-1` dalam `index.html` supaya telefon pelawat muat fail baharu.
+- Selepas menukar CSS/JS, naikkan versi `?v=20261122-2` dalam `index.html` supaya telefon pelawat muat fail baharu.
 
 ## Bayar online — CHIP Payment Link (tanpa pelayan)
 Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *hanya selepas* link diisi.
@@ -44,7 +44,7 @@ Butang **"Bayar Online (FPX / Kad) melalui CHIP"** muncul di bawah setiap set *h
    Aktifkan medan nama, telefon dan **alamat penghantaran** jika ada pilihan itu.
 2. Tetapkan halaman selepas berjaya bayar (success redirect) ke `https://soursop.my/terima-kasih.html`.
 3. Tampal URL setiap link dalam `js/main.js` → `PAY_LINKS` (`set-1`, `set-2`, `set-3`), kemudian naikkan `?v=` dalam `index.html`.
-   Link semasa (akaun CHIP owner): set-1 RM220 `…/DXNaIr3VQzcv9r0LHL`; set-2 RM400 dan set-3 RM500 belum diisi (butang jadi Order WhatsApp).
+   Link semasa (akaun CHIP owner): set-1 RM220 `…/DXNaIr3VQzcv9r0LHL`, set-2 RM400 `…/kzxspkDZW7rUt1ByG0`, set-3 RM500 `…/u14gRBdYiwzrAM8Q8A`.
 4. Semak bayaran di dashboard CHIP (bukan berdasarkan halaman terima kasih — pelanggan boleh buka halaman itu tanpa bayar).
 
 ## Deploy
